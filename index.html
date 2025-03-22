@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Cards</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+    <section class="our-story">
+        <div class="story-container">
+          <h1>Our Story</h1>
+          <div class="story-content">
+            <div class="story-text">
+              <h2>How It All Started</h2>
+              <p>The journey sparked from a bold idea — uniting people and technology to transform lives. From a cluster of students with diverse talents, it grew into a dedicated team driven by one goal: advancing engineering excellence. Passion fuels a commitment to integrate humanity and innovation, crafting solutions that shape a smarter, more unified world, step by step.</p>
+            </div>
+            <div class="story-image">
+              <div class="image-placeholder">
+                <img src="Images/os.avif">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <div class="container">
+      <h1>Meet Our Team</h1>
+      <div id="card-list" class="card-list">
+        <!-- Cards will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const teamMembers = [
+        {
+      image: "/images/Abinaya.webp",
+      name: "Abinaya Narayanan",
+      role: "Associate Developer",
+      description: "Connecting solutions with success.",
+      linkedin: "https://www.linkedin.com/in/abinaya-narayanan",
+      github: "https://github.com/Abinayanarayanan"
+    },
+    {
+      image: "/images/",
+      name: "Ajay J",
+      role: "Corporate Communication",
+      description: "Connecting solutions with success.",
+      linkedin: "https://www.linkedin.com/in/ajay-jx/",
+      github: "https://github.com/ajax-j"
+    },
+    {
+      image: "/images/Anit M Varghese.webp",
+      name: "Anit",
+      role: "Associate Designer",
+      description: "Code that connects ideas with impact.",
+      linkedin: "https://www.linkedin.com/in/anitmv",
+      github: "https://github.com/AnitVarghese"
+    },
+    {
+      image: "/images/Barath Kumar.webp",
+      name: "Barathkumar",
+      role: "Associate Developer",
+      description: "I wrestle APIs into submission.",
+      linkedin: "https://www.linkedin.com/in/barath-kumar-m",
+      github: "https://github.com/Barathkumar30"
+    },
+    {
+      image: "/images/bhackya_bharathi.webp",
+      name: "Bhackya bharathi M",
+      role: "Associate Designer",
+      description: "Crafting digital elegance with every pixel!",
+      linkedin: "https://www.linkedin.com/in/bhackya-bharathi/",
+      github: "https://github.com/bhackya"
+    },
+    {
+      image: "/images/Bharathidasan.webp",
+      name: "Bharathidasan R",
+      role: "Associate Developer",
+      description: "Design. Develop. Dominate.",
+      linkedin: "https://www.linkedin.com/in/bharathi-dasan-r/",
+      github: "https://github.com/Bharathi7688"
+    },
+    {
+      image: "/images/Deepak.webp",
+      name: "Deepak M",
+      role: "Associate Developer",
+      description: "Code with purpose, build with passion",
+      linkedin: "https://www.linkedin.com/in/deepakmaragathavel",
+      github: "https://github.com/Itz-me-deepak/"
+    },
+    {
+      image: "/images/deepthi.WEBP",
+      name: "Deepthi G",
+      role: "Corporate Communication",
+      description: "Code. Break. Panic. Fix. Repeat.",
+      linkedin: "http://www.linkedin.com/in/deepthi-ganesan",
+      github: "https://github.com/deepthi013g"
+    },
+    {
+      image: "/images/Dhanush.webp",
+      name: "Dhanush kumar E",
+      role: "Associate Designer",
+      description: "I adore to orchestrate visual experiences.",
+      linkedin: "https://www.linkedin.com/in/dhanushkumarwebdeveloper",
+      github: "https://github.com/Dhanush-dk2003/"
+    },
+    {
+      image: "/images/Gaja.WEBP",
+      name: "Gaja Lakshmi R J",
+      role: "Corporate Communication",
+      description: "Insights that drive impactful change.",
+      linkedin: "https://www.linkedin.com/in/gaja-lakshmi",
+      github: "https://github.com/Gaja7311"
+    },
+    {
+      image: "/images/gokul.webp",
+      name: "Gokul",
+      role: "Associate Human Resource",
+      description: "Building simple and effective solutions through technology",
+      linkedin: "https://www.linkedin.com/in/gokulparthiban/",
+      github: "https://github.com/gokulbalasundari"
+    },
+    {
+      image: "/images/Gouri Parvathy.WEBP",
+      name: "Gouri Parvathy A",
+      role: "Associate Developer",
+      description: "Bringing your vision to life, pixel by pixel",
+      linkedin: "https://www.linkedin.com/in/gouri-parvathy/",
+      github: "https://github.com/Gouri-Parvathy"
+    },
+    {
+      image: "/images/Gowsica.webp",
+      name: "Gowsica S",
+      role: "Corporate Communication",
+      description: "Connecting strategy with execution.",
+      linkedin: "http://linkedin.com/in/gowsica-sangeetha/",
+      github: "https://github.com/Gowsica"
+    },
+    {
+      image: "/images/Gowtham.webp",
+      name: "Gowtham R",
+      role: "Associate Business Analyst",
+      description: "The architect of actionable insights.",
+      linkedin: "https://www.linkedin.com/in/gowtham-rs",
+      github: "https://github.com/Gowthamrengaraj"
+    },
+    {
+      image: "/images/Hema Kumar.webp",
+      name: "Hema Kumar RA",
+      role: "Associate Human Resource",
+      description: "Insights that drive impactful change.",
+      linkedin: "https://www.linkedin.com/in/hemakumarra/",
+      github: "https://github.com/HEMA-KUMAR10"
+    },
+    {
+      image: "/images/Jerin.webp",
+      name: "Jerin Flavio J",
+      role: "Associate Quality Analyst",
+      description: "Turning dreams into deployable realities.",
+      linkedin: "www.linkedin.com/in/jerin-flavio",
+      github: "https://github.com/Jerinflavio"
+    },
+    {
+      image: "/images/Johann.webp",
+      name: "Johann Manuel Kenneth",
+      role: "Associate Developer",
+      description: "Code’s my language, chaos my playground",
+      linkedin: "https://www.linkedin.com/in/johann-kenneth0518/",
+      github: "https://github.com/Johann-Kenneth"
+    },
+    {
+      image: "/images/Kanishka.webp",
+      name: "Kanishka Preethi K",
+      role: "Associate Quality Analyst",
+      description: "Pioneering connectivity, node to network",
+      linkedin: "www.linkedin.com/in/kanishka-preethi-k/",
+      github: "https://github.com/kanishkaPreethik"
+    },
+    {
+      image: "/images/Karthi.png    ",
+      name: "Karthi S",
+      role: "Associate Developer",
+      description: "Where logic meets creativity",
+      linkedin: "https://www.linkedin.com/in/karthi-s-78b9bb228/",
+      github: "https://github.com/Karthi788"
+    },
+    {
+      image: "/images/Kishore.webp",
+      name: "Kishore N",
+      role: "Associate Developer",
+      description: "Defying logic, designing magic",
+      linkedin: "https://www.linkedin.com/in/kishorenagaraj",
+      github: "https://github.com/KishoreNagaraj-03"
+    },
+    {
+      image: "/images/krishna.webp",
+      name: "Krishna",
+      role: "Associate Developer",
+      description: "Designing solutions, coding progress.",
+      linkedin: "https://www.linkedin.com/in/krishna-p-%E3%82%AF%E3%83%AA%E3%82%B7%E3%83%A5%E3%83%8A%E3%83%BB%E3%83%91/",
+      github: "https://github.com/KrishnaParthiban"
+    },
+    {
+      image: "/images/Gouse.webp",
+      name: "Mohammed Gouse B",
+      role: "Associate Developer",
+      description: "I write the code that runs the world.",
+      linkedin: "https://www.linkedin.com/in/1709-mdgouse",
+      github: "https://github.com/MohammmmedgouseB"
+    },
+    {
+      image: "/images/Nandhini.webp",
+      name: "Nandhini P",
+      role: "Finance",
+      description: "Bridging the gap between data and dollars",
+      linkedin: "http://www.linkedin.com/in/nandhini-",
+      github: "https://github.com/nandhini-palanimuthu"
+    },
+    {
+      image: "/images/navaneeth.webp",
+      name: "Navaneeth. T",
+      role: "Associate Designer",
+      description: "Turning raw ideas into digital masterpieces.",
+      linkedin: "https://www.linkedin.com/in/navaneeththangavelu/",
+      github: "https://github.com/NAVANEETH03"
+    },
+    {
+      image: "/images/Nishanth.webp",
+      name: "Nishanth. R",
+      role: "Associate Human Resource",
+      description: "Mess to flow, making it grow",
+      linkedin: "https://www.linkedin.com/in/nishanth24",
+      github: "https://github.com/Nishanth-Nhub"
+    },
+    {
+      image: "/images/Pradeesh.webp",
+      name: "Pradeesh Kovalan",
+      role: "Associate Developer",
+      description: "Turning Vision into Code, and Code into Impact.",
+      linkedin: "https://www.linkedin.com/in/pradeesh-kovalan",
+      github: "https://github.com/pradeesh-kovalan"
+    },
+    {
+      image: "/images/Prasanth.webp",
+      name: "Prasanth.M",
+      role: "Associate Developer",
+      description: "Challenge your limits",
+      linkedin: "https://www.linkedin.com/in/prasanth-marimuthu",
+      github: "https://github.com/PrasanthMarimuthuk"
+    },
+    {
+      image: "/images/Prince Abishek.webp",
+      name: "Prince abishek A",
+      role: "Associate Developer",
+      description: "Unlocking Possibilities Through Code.",
+      linkedin: "https://www.linkedin.com/in/prince-abishek/",
+      github: "https://github.com/princeabishek"
+    },
+    {
+      image: "/images/Ragul.webp",
+      name: "Ragul. R",
+      role: "Associate Developer",
+      description: "Bugs fear me, features love me.)",
+      linkedin: "https://www.linkedin.com/in/iamragulr",
+      github: "https://github.com/Ragulcodes"
+    },
+    {
+      image: "/images/Ranjith.webp",
+      name: "Ranjith S",
+      role: "Associate Developer",
+      description: "I turn ideas into 1s and 0s.",
+      linkedin: "",
+      github: ""
+    },
+    {
+      image: "/images/Sivapprakash.webp",
+      name: "Sivapprakash. C",
+      role: "Infra",
+      description: "Without Infra, Everything is just an Idea",
+      linkedin: "https://linkedin.com/in/sivapprakash-chinnaraj/",
+      github: "https://github.com/sivapprakash-chinnaraj"
+    },
+    {
+      image: "/images/Sree Baarath.webp",
+      name: "Sree Baarath B",
+      role: "Associate Developer",
+      description: "Code with purpose, build with passion.",
+      linkedin: "https://linkedin.com/in/sreebaarathb/",
+      github: "https://github.com/sreebaarath411"
+    },
+    {
+      image: "/images/Sudharsun.webp",
+      name: "Sudharsun",
+      role: "Associate Designer",
+      description: "Building the bridge between ideas and reality",
+      linkedin: "https://www.linkedin.com/in/sudharsun-balamurugan/",
+      github: "https://github.com/SudharsunBalamurugan"
+    },
+    {
+      image: "/images/Tharaneetharan.webp",
+      name: "Tharaneetharan M",
+      role: "Associate Developer",
+      description: "Turning Data into Epic Wins",
+      linkedin: "linkedin.com/in/tharanee-tharan-m",
+      github: "https://github.com/Tharaneetharan19"
+    },
+        ];
+
+        const cardList = document.getElementById("card-list");
+
+teamMembers.forEach((member) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML = `
+    <div class="image-container">
+        <img class="card-image" src="${member.image}" alt="${member.name}">
+    </div>
+    <div class="card-content">
+        <h3 class="name">${member.name}</h3>
+        <p class="role">${member.role}</p>
+        <p class="card-description">${member.description}</p>
+    </div>
+    <div class="social-icons">
+        <a href="${member.linkedin}" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="${member.github}" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+  `;
+
+  cardList.appendChild(card);
+});
+
+
+      });
+    </script>
+  </body>
+</html>
